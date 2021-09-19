@@ -1,7 +1,7 @@
 print('[INFO] INIT CONFIG')
 UserInfo = {
-    'account': 'C107118116',
-    'password': 'a9931543'
+    'account': '',
+    'password': ''
 }
 
 SelectInfo = [
