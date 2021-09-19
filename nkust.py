@@ -2,7 +2,8 @@ import requests
 import plugin
 import re
 import html
-
+import random
+import time
 showPrint = True
 
 
@@ -11,15 +12,15 @@ def createSession():
         print('=========================================')
         print('[INFO]createSession')
     headers = {
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+        'Accept': 'test{}'.format(random.randint(0,999)),
+        'User-Agent': 'test{}'.format(random.randint(0,999)),
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
         'Sec-Fetch-Site': 'none',
         'Sec-Fetch-Mode': 'navigate',
         'Sec-Fetch-Dest': 'document',
         'Referer': 'https://aais4.nkust.edu.tw/selcrs_std/FirstSelect/SelectPage',
         'Accept-Encoding': 'gzip, deflate, br',
-        'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Accept-Language': 'test{}'.format(random.randint(0,999)),
         'Connection': 'keep-alive',
     }
     client = requests.session()
@@ -77,10 +78,10 @@ def logout(client):
     # https://aais4.nkust.edu.tw/selcrs_std/Login/Logout
     thisUrl = "https://aais4.nkust.edu.tw/selcrs_std/Login/Logout"
     res = client.get(thisUrl, timeout=5)
-    if showPrint:
-        print('[Server status]->', res.status_code)
-    if showPrint:
-        print('[INFO]logout success')
+    #if showPrint:
+    print('[Server status]->', res.status_code)
+    #if showPrint:
+    print('[INFO]logout success')
 
 
 def about(client):
